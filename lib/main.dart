@@ -106,7 +106,7 @@ class _NinjaCardState extends State<NinjaCard> {
                     width: 10.0,
                   ),
                   Text(
-                    'nahee@naver.com',
+                    'naheelovetrung@naver.com',
                     style: TextStyle(
                       color: Colors.grey.shade400,
                       fontSize: 18.0,
