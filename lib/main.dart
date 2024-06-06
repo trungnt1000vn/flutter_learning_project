@@ -7,7 +7,13 @@ void main() {
   ));
 }
 
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+  int loveLevel = 10;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +25,16 @@ class NinjaCard extends StatelessWidget {
           ),
           centerTitle: true,
           backgroundColor: Colors.grey[850],
+          elevation: 0.0,
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              loveLevel += 1;
+            });
+          },
+          child: Icon(Icons.add),
+          backgroundColor: Colors.grey[800],
           elevation: 0.0,
         ),
         body: Padding(
@@ -58,17 +74,18 @@ class NinjaCard extends StatelessWidget {
               SizedBox(
                 height: 30.0,
               ),
-              Text('SECOND NAME',
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-              ),
+              Text(
+                'HOW LOVE ?',
+                style: TextStyle(
+                  color: Colors.grey,
+                  letterSpacing: 2.0,
+                ),
               ),
               SizedBox(
                 height: 10.0,
               ),
               Text(
-                'Ah-young',
+                '$loveLevel',
                 style: TextStyle(
                   color: Colors.amberAccent.shade200,
                   letterSpacing: 2.0,
